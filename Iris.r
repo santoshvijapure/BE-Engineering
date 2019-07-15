@@ -1,7 +1,9 @@
 # Program no. 1
 # Laboratory Practice-I
 # tushar@tusharkute.com
-
+library(ggplot2)
+library(ggiraph)
+library(plotly)
 # read the dataset
 df = read.csv("iris.csv")
 
@@ -36,3 +38,17 @@ for (n in num) {
 }
 
 boxplot(df[,1:4], main = "Boxplot of Iris")
+             
+             
+             
+             
+             
+             #ggplot(df, aes(displ, hwy, colour = class)) + geom_point()
+#ggplot(data=df,aes(x=SepalWidthCm, y=SepalLengthCm)) + geom_point() + theme_minimal()
+ggplot(data=Iris,aes(x=Petal.Length, y=Petal.Width,color=Species)) + geom_point() + theme_minimal()
+ggplot(data=Iris,aes(x=Sepal.Width, y=Sepal.Length,z=Petal.Length,color=Species)) + geom_point() + theme_minimal()
+ggplot(data=Iris,aes(x=Petal.Width,y=Petal.Length,color=Species))+geom_point(alpha=0.3)
+
+
+gg=ggplot(data=Iris[sample.int(nrow(data=Iris),size=2000),],aes(x=Petal.Lenght,y=Petal.width,color=Species))+geom_point_interactive(aes(tooltip=cut))
+ggiraph(code = print(gg))
