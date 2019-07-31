@@ -8,34 +8,33 @@ def check_diseas():
 	cold=0
 	
 	dummy_input=""
-	cancer_symptums=['hair loss','weight loss','blood vomit','blood-tinged saliva']
-	fever_symptums=['shaking','cold','cough','chills']
-	cold_symptums=['headache','runny_nose','sneezing','sore_throat']
+	cancer_symptoms=['hair loss','weight loss','blood vomit','blood-tinged saliva']
+	fever_symptoms=['shaking','cold','cough','chills']
+	cold_symptoms=['headache','runny_nose','sneezing','sore_throat']
 
-	for i in cancer_symptums:
+	for i in cancer_symptoms:
 		dummy_input=raw_input("do you have " + i +"  Y/N ")
 		if(dummy_input=="y" or dummy_input=="Y"):
 			cancer +=1
 		print("\n")
-	for i in fever_symptums:
+	for i in fever_symptoms:
 		dummy_input=raw_input("do you have " + i + "  Y/N ")
 		if(dummy_input=="y" or dummy_input=="Y") :
 			fever +=1
 		print("\n")
-	for i in cold_symptums:
+	for i in cold_symptoms:
 		dummy_input=raw_input("do you have " + i + "  Y/N ")
 		if(dummy_input=="y" or dummy_input=="Y"):
 			cold +=1
 		print("\n")
-	diseases=[cancer,fever,cold]
-	diseases=max(diseases)
-	tmp=str(diseases)
-	print("user has "+ " "+ tmp)
-	if diseases== cold:
+	diseases={"cancer":cancer,"fever":fever,"cold":cold}
+	diseas=max(diseases)
+	print("user has "+" "+diseas)
+	if diseas== 'cold':
 		print("Advices and Sugestions\n1: Tylenol\n2: Panadol\n3: Nasal spray\nPlease weare warm cloths because")
-	elif diseases== fever:
+	elif diseas== 'fever':
 		print("Advices and Sugestions\n 1: Tylenol \n2:Nasal spray \nnPlease weare warm cloths because")
-	elif diseases == cancer:
+	elif diseas == 'cancer':
 		print("Advices and Sugestions\n 1: 1: Chloramphenicol\n 2: Amoxicillin\n3: Ciprofloxacin\n4: Azithromycin\nPlease do complete bed rest and take soft diet because")
-	
+
 check_diseas()
