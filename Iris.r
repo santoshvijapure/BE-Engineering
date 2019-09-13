@@ -1,6 +1,4 @@
-# Program no. 1
-# Laboratory Practice-I
-# tushar@tusharkute.com
+
 library(ggplot2)
 library(ggiraph)
 library(plotly)
