@@ -3,7 +3,7 @@
 #include<iomanip>
 using namespace std;
 
-int im = 3, ic = 3, i, j, fm = 0, fc = 0, status = 0, flag = 0, select0 = 0;
+int im = 3, ic = 3, i, j, fm = 0, fc = 0, status = 0, flag = 0, sel = 0;
 void display(char bpass1, char bpass2)
 {
         cout << "\n\n\n";
@@ -47,7 +47,7 @@ void solution()
         {
                 if (flag == 0)
                 {
-                        switch (select0)
+                        switch (sel)
                         {
                                 case 1:display('C', ' ');
                                         ic++;
@@ -59,14 +59,14 @@ void solution()
                         if (((im - 2) >= ic && (fm + 2) >= fc) || (im - 2) == 0)
                         {
                                 im = im - 2;
-                                select0 = 1;
+                                sel = 1;
                                 display('M', 'M');
                                 flag = 1;
                         }
                         else if ((ic - 2) < im && (fm == 0 || (fc + 2) <= fm) || im == 0)
                         {
                                 ic = ic - 2;
-                                select0 = 2;
+                                sel = 2;
                                 display('C', 'C');
                                 flag = 1;
                         }
@@ -74,14 +74,14 @@ void solution()
                         {
                                 ic = ic - 1;
                                 im = im - 1;
-                                select0 = 3;
+                                sel = 3;
                                 display('M', 'C');
                                 flag = 1;
                         }
                 }
                 else
                 {
-                        switch (select0)
+                        switch (sel)
                         {
                                 case 1:display('M', 'M');
                                         fm = fm + 2;
@@ -99,14 +99,14 @@ void solution()
                                 if (((fc > 1 && fm == 0) || im == 0))
                                 {
                                         fc--;
-                                        select0 = 1;
+                                        sel = 1;
                                         display('C', ' ');
                                         flag = 0;
                                 }
                                 else if ((ic + 2) > im)
                                 {
                                         fc--; fm--;
-                                        select0 = 2;
+                                        sel = 2;
                                         display('C', 'M');
                                         flag = 0;
                                 }
