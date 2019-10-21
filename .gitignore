@@ -1,0 +1,4 @@
+.*
+!.gitignore
+!Artificial_Intelligence/ChatBot
+plugin.log
