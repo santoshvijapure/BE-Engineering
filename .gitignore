@@ -2,3 +2,5 @@
 !.gitignore
 !Artificial_Intelligence/ChatBot
 plugin.log
+a.out
+*.class
